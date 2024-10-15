@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  bool isPassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,8 +65,15 @@ class LoginScreen extends StatelessWidget {
                     prefixIcon: Icon(
                       Icons.lock,
                     ),
-                    suffixIcon: Icon(
-                      Icons.remove_red_eye,
+                    suffixIcon: IconButton(
+                      onPressed: (){
+                        setState(() {
+                          isPassword = ! isPassword;
+                        });
+                      },
+                      icon: Icon(
+                        isPassword ? Icons.visibility : Icons.visibility_off,
+                      ),
                     ),
                     border: OutlineInputBorder(),
                   ),
@@ -109,3 +122,5 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
+

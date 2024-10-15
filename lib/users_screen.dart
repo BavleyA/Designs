@@ -56,6 +56,16 @@ class UsersScreen extends StatelessWidget {
         name: 'Mina adel',
         phoneNumber: '01036790990'
     ),
+    UserModel(
+        id: 5,
+        name: 'Mario adel',
+        phoneNumber: '01036790990'
+    ),
+    UserModel(
+        id: 6,
+        name: 'andrew adel',
+        phoneNumber: '01036790990'
+    ),
   ];
 
 
